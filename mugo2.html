@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Model Viewer Fullscreen</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #7a9a01;
+      }
+
+      model-viewer {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        background-color: #7a9a01;
+      }
+    </style>
+
+    <style>
+      .title-bottom-right {
+        font-family: Arial, sans-serif;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        color: black;
+        font-size: 15px;
+
+        z-index: 10;
+      }
+    </style>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
+  </head>
+  <body>
+    <model-viewer
+      src="https://raw.githubusercontent.com/pasros/StudioWilliamWelch/main/mugo2.glb"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      camera-controls
+      tone-mapping="aces"
+      poster="poster.webp"
+      shadow-intensity="2.0"
+
+exposure="0.45"
+    >
+      <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">View in your space</button>
+      <div id="ar-prompt">
+        <img
+          src="https://cdn.glitch.global/cdb2d4c3-d2b5-4da3-965d-481dce2dc545/LOGOINNERBLACK.png?v=1750352668957"
+          width="150"
+          height="70"
+          style="margin-top: 20px; margin-left: 20px"
+        />
+      </div>
+      <div class="title-bottom-right">Mugo 2</div>
+    </model-viewer>
+  </body>
+</html>
